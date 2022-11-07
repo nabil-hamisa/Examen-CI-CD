@@ -30,10 +30,8 @@ pipeline {
     }
     stage('clean') {
       steps {
-       
-          sh 'docker image prune -a'
-          sh 'docker container prune'
-
+          sh 'docker image prune -a -f'
+          sh 'docker container prune -f'        
       }
     }
     }
